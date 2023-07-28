@@ -1,0 +1,2158 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import "css-family=Oswald-300,400,700&subset=latin-ext.css"/*tpa=https://fonts.googleapis.com/css?family=Oswald:300,400,700&subset=latin-ext*/;
+
+/* clearfix */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* 画像センタリング */
+
+.cr {margin:0 auto;}
+
+/* 点滅 */
+.blinking{
+    animation:blink 3s infinite alternate;
+}
+
+@keyframes blink{
+  0% {opacity: 1;}
+  50% {opacity: 1;}
+  50.01% {opacity: 0;}
+  100% {opacity: 0;
+  }
+}
+
+/* FireFoxFadeブレ防止 */
+
+img { display:block; box-shadow: #000 0 0 0; }
+
+
+/* ページトップ */
+
+#page-top {
+	position: fixed;
+	bottom: 24px;
+	right: 20px;
+	width:50px;
+	border-radius:10px;
+	z-index:550;
+}
+#page-top a {
+	background: #5d90cc;
+	width:50px;
+	height:50px;
+	border-radius:25px;
+	display:block;
+	margin-bottom:12px;
+	transition:all 0.3s;
+	line-height:50px;
+	font-size:3rem;
+	color:#fff;
+}
+
+#page-top a:hover {
+	transform: scale(1.2);
+}
+
+/* テキストカラー */
+
+.c_red {color:red;}
+.c_yellow {color:yellow;}
+.c_green {color:forestgreen;}
+.c_blue {color:deepskyblue;}
+.c_purple {color:rebeccapurple;}
+
+strong {font-weight:bold;}
+
+/* 全体・枠作り・トップページ */
+
+html,body {
+	height:100%;
+}
+
+html {
+	font-size:62.5%;
+}
+
+img { display:block; }
+
+
+body {
+	font-family:"微软雅黑", Verdana, sans-serif;
+	text-align:center;
+	font-size: 1.0rem;
+	width: 100%;
+}
+
+#PageWrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	position: relative;
+	width:100%;
+}
+
+body#Index #PageWrapper {
+	background:url("mainvisual.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/mainvisual.jpg*/ center 70px no-repeat;
+	background-size:130%;
+	background-attachment: fixed;
+}
+
+body#Sub #PageWrapper {
+	background:url("mainvisual.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/mainvisual_blur.jpg*/ center 70px no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
+}
+
+header {
+	width:100%;
+	height:71px;
+	position: fixed;
+	top:0;
+	head:0;
+	z-index: 100;
+}
+
+.menu_wrap {
+	height:71px;
+	margin:0 auto;
+	position:relative;
+}
+
+
+.top_logo {
+	background:url("menu_logo.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/menu_logo.png*/ left top no-repeat;
+	width:140px;
+	height:100px;
+	position:absolute;
+	left:0;
+	top:0;
+	overflow: hidden;
+	text-indent: -9999px;
+	z-index:300!important;
+}
+
+
+.mobile_hun {
+	width:100%;
+	height:71px;
+	position:absolute;
+	background:url("./image/dz.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/menu_bg.png*/ left top repeat;
+	right:0;
+	top:0;
+	color:#fff;
+	font-size:4.2rem;
+	line-height: 71px;
+	z-index:200;
+	text-align: right;
+}
+
+.mobile_hun a.open {
+	width:71px;
+	height: 71px;
+	display:inline-block;
+	color:#fff;
+	text-align: center;
+	background-color:#986049;
+	border-left:1px solid #CC937B;
+	position: relative;
+	z-index:250;
+}
+
+#Menu:not(:target) .mobile_hun a.close {
+	display: none;
+}
+
+#Menu:target .mobile_hun a.close {
+	width:71px;
+	height: 71px;
+	display:inline-block;
+	color:#fff;
+	text-align: center;
+	background-color:#986049;
+	border-left:1px solid #CC937B;
+	z-index:250;
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+.top_menu {
+	transition: all 0.3s;
+}
+
+#Menu:not(:target) .top_menu {
+	width:100%;
+	background-color:#986049;
+	padding:4px 0;
+	position:absolute;
+	top:-400px;
+	transition: all 0.3s;
+	z-index:150;
+}
+
+#Menu:target .top_menu {
+	width:100%;
+	background-color:#986049;
+	padding:4px 0;
+	position: absolute;
+	top:71px;
+	transition: all 0.3s;
+	z-index:150;
+}
+
+#Menu:not(:target) .menuclick_bg {
+	display: none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	background-color:#fff;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+#Menu:target .menuclick_bg {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	background-color:#fff;
+	opacity: 0.5;
+	transition: all 0.3s;
+	z-index:100;
+}
+
+.menuclick_bg a {
+	width:100vw;
+	height:100vh;
+	display: block;
+}
+
+.top_menu ul li {
+}
+
+.top_menu ul li a {
+	width:94%;
+	display: block;
+	transition: all 0.3s;
+	font-family: 'Sigmar One', cursive;
+	text-decoration: none;
+	background:#f6e7d0;
+	font-size:2rem;
+	padding:3px 0;
+	margin:0 auto 6px;
+	color:#986049;
+	border-radius: 5px;
+}
+
+.top_menu ul li a:hover {
+	color:#eb6e8f;
+}
+
+#Mainvisual {
+	width:100%;
+	padding-top:100%;
+	background:url("overtxt.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/overtxt.png*/ center bottom no-repeat;
+	background-size:140%;
+	position: relative;
+}
+
+.overbanner_left {
+	display: none;
+}
+
+.overbanner_left a img {
+	width:100%;
+	transition: all 0.3s;
+}
+
+.overbanner_left a:hover img {
+	margin-top:-10px;
+}
+
+.overbanner_left2 {
+	display: none;
+}
+
+.overbanner_right {
+	display: none;
+}
+
+.overbanner_right a img {
+	width:100%;
+	transition: all 0.3s;
+}
+
+.overbanner_right a:hover img {
+	margin-top:-10px;
+}
+
+.overbanner_right2 {
+	display: none;
+}
+
+
+#Index_Contents {
+	width:100%;
+	background:url("white_bg.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/white_bg.png*/ left top repeat;
+	min-height: 60vh;
+	padding-bottom:3vh;
+}
+
+body#Sub #Index_Contents {
+	padding-top:48px;
+}
+
+#Topics {
+	width:96%;
+	margin:0 auto;
+	padding-top:36px;
+}
+
+.topics_large {
+	width:990px;
+	height:160px;
+	background:#fff;
+	border-radius: 10px;
+	border:5px solid #fff;
+	box-shadow:0 5px 5px rgba(152,96,73,0.5);
+	margin-bottom:24px;
+	transition: all 0.3s;
+	position: relative;
+}
+
+.topics_large a {
+	width:990px;
+	height:160px;
+	overflow: hidden;
+	border-radius: 10px;
+	display: block;
+}
+
+.topics_large a img {
+	transition: all 0.3s;
+}
+
+.topics_large a:hover img {
+	opacity: 0.7;
+}
+
+.topics_middle {
+	width:100%;
+	margin-right:-20px;
+	margin-bottom:12px;
+}
+
+.topics {
+	width:100%;
+	background:#fff;
+	border-radius: 10px;
+	float:left;
+	box-shadow:0 5px 5px rgba(152,96,73,0.5);
+	margin-bottom:24px;
+}
+
+.topics a {
+	width:100%;
+	padding-top:32%;
+	overflow: hidden;
+	border-radius: 10px;
+	display: block;
+	position: relative;
+}
+
+.topics a img {
+	width:100%;
+	transition: all 0.3s;
+	position:absolute;
+	left:0;
+	top:-4px;
+}
+
+.topics a:hover img {
+	opacity: 0.7;
+}
+
+.new {
+	display: none;
+}
+
+#Update_information {
+	width:90%;
+	padding:0 2%;
+	background:url("sand_bg.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sand_bg.png*/ left top repeat;
+	border-radius: 15px;
+	border:5px solid #e7dbc7;
+	margin:0 auto;
+	box-shadow:0 5px 5px rgba(152,96,73,0.5);
+}
+
+#Update_information h3 {
+	background:url("info_title.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/info_title.png*/ center top no-repeat;
+	height:32px;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin:16px auto 24px;
+}
+
+#Update_wrap {
+}
+
+.oneday {
+	width:100%;
+	border-bottom:1px solid #cebc9d;
+	padding-bottom:12px;
+	margin:0 auto 24px;
+	position:relative;
+}
+
+.oneday:before,
+.oneday:after {
+    content: " ";
+    display: table;
+}
+
+.oneday:after {
+    clear: both;
+}
+
+.oneday .day_icon {
+	width:30%;
+	margin-right:5%;
+	padding-top:30%;
+	position: relative;
+	float:left;
+}
+
+.oneday .day_icon img {
+	width:100%;
+	position: absolute;
+	left:0;
+	top:0;
+}
+
+.oneday .day_text {
+	width:65%;
+	font-size:1.6rem;
+	text-align: left;
+	color:#986049;
+	float:left;
+}
+
+.oneday .day_text h4 {
+	background:url("log_border.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/log_border.png*/ left bottom repeat-x;
+	height:32px;
+	font-family: 'Sigmar One', cursive;
+	font-size:2.4rem;
+	line-height: 24px;
+	display: block;
+	width:100%;
+}
+
+.oneday .day_text p {
+	width:100%;
+	display: inline-block;
+	line-height: 1.8;
+	margin:8px 0;
+}
+
+.foot_space {
+	width:100%;
+	height:201px;
+}
+
+footer {
+	width:100%;
+	height:201px;
+	background:url("./image/db.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/foot_bg.jpg*/ left top repeat;
+	position: absolute;
+	bottom: 0;
+	*left:-1px;
+	color:#fff;
+	font-size:1.6em;
+}
+
+.foot_wrap {
+	height:201px;
+	margin:0 auto;
+	position:relative;
+}
+
+.foot_sd {
+	background:url("foot_sd.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/foot_sd.png*/ left center no-repeat;
+	width:340px;
+	height:201px;
+	position:relative;
+	margin:0 auto;
+}
+
+.foot_banner {
+	width:200px;
+	height:40px;
+	margin:0 auto 18px;
+	position:absolute;
+	left:70px;
+	bottom:28px;
+}
+
+.copyright {
+	width:340px;
+	text-align: center;
+	color:#fff;
+	position: absolute;
+	left:0;
+	bottom:20px;
+	font-size:1.2rem;
+}
+
+.ftable {
+	display: none;
+}
+
+.ftable dl dt {
+	color:#ffcc00;
+	float:left;
+	text-align: right;
+}
+
+.ftable dl dd {
+	float:left;
+	text-align: left;
+}
+
+.ftable dl:before,
+.ftable dl:after {
+	content: " ";
+    display: table;
+}
+
+.ftable dl:after {
+	clear:both;
+}
+
+.ftable_1 {
+	width:220px;
+	position:absolute;
+	left:360px;
+	top:16px;
+}
+
+.ftable_2 {
+	width:480px;
+	position:absolute;
+	left:580px;
+	top:16px;
+}
+
+.foot_banner a img {
+	width:100%;
+	transition:all 0.3s;
+}
+
+.foot_banner a:hover img {
+	opacity: 0.7;
+}
+
+/* サブページ汎用CSS */
+
+.readybox {
+	background:url("ready.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/ready.png*/ left top no-repeat;
+	width:300px;
+	height:300px;
+	margin:54px auto 0;
+}
+
+#Subhead {
+	width:100%;
+	height:200px;
+	position: relative;
+	overflow: hidden;
+}
+
+.head_green {background:url("head_green.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/head_green.jpg*/ left top repeat;}
+.head_pink {background:url("head_pink.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/head_pink.jpg*/ left top repeat;}
+.head_orange {background:url("head_orange.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/head_orange.jpg*/ left top repeat;}
+.head_purple {background:url("head_purple.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/head_purple.jpg*/ left top repeat;}
+
+.subtitle {
+	width:100%;
+	height:200px;
+	margin-left:auto;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.sub_story {background:url("m_title_story.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/m_title_story.png*/right top no-repeat;}
+.sub_character {background:url("m_title_character.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/m_title_character.png*/right top no-repeat;}
+.sub_graphic {background:url("m_title_graphic.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/m_title_graphic.png*/right top no-repeat;}
+.sub_spec {background:url("m_title_spec.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/m_title_spec.png*/right top no-repeat;}
+.sub_download {background:url("m_title_download.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/m_title_download.png*/right top no-repeat;}
+.sub_campaign {background:url("m_title_campaign.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/sub/m_title_campaign.png*/right top no-repeat;}
+
+.secondhead {
+	width:96%;
+	padding-top:20%;
+	margin:0 auto 4vh;
+	position: relative;
+}
+
+.secondhead img {
+	position: absolute;
+	width:100%;
+	top:0;
+}
+
+/* ストーリーCSS */
+
+.story_title {
+	background:url("story_title.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/story/story_title.png*/ left bottom no-repeat;
+	width:270px;
+	height:184px;
+	overflow: hidden;
+	text-indent: -9999px;
+	margin:0 auto 48px;
+}
+
+.story_body {
+	width:100%;
+}
+
+.story_txt_01 {
+	background:url("story_txt_01.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/story/story_txt_01.png*/ center center no-repeat;
+	background-size:100%;
+	width:100%;
+	padding-top:94.7%;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.story_face {
+	background:url("story_face.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/story/story_face.png*/ center center no-repeat;
+	width:100%;
+	background-size:100%;
+	padding-top:26%;
+}
+
+.story_txt_02 {
+	background:url("story_txt_02.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/story/story_txt_02.png*/ center center no-repeat;
+	width:100%;
+	background-size:100%;
+	padding-top:12%;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+/* キャラクターCSS */
+
+.chara_grand {
+	width:96%;
+	position:relative;
+	margin:0 auto 56px;
+	z-index:1;
+}
+
+.chara_sq {
+	margin-top:-17%;
+	width:100%;
+	padding-top:100%;
+	position:relative;
+	left:0;
+	z-index:10;
+}
+
+.chara_catch {
+	width:100%;
+	padding-top:8%;
+	text-indent: -9999px;
+	overflow: hidden;
+	position:absolute;
+	left:0;
+	z-index:20;
+	top:58%;
+}
+
+.chara_phrase {
+	width:10.5%;
+	padding-top:135%;
+	text-indent: -9999px;
+	overflow: hidden;
+	position:absolute;
+	right:2%;
+	z-index:20;
+	top:0;
+}
+
+.chara_name {
+	width:75%;
+	padding-top:44%;
+	text-indent: -9999px;
+	overflow: hidden;
+	position:absolute;
+	left:0;
+	z-index:20;
+	top:30%;
+}
+
+.chara_voice {
+	position:absolute;
+	width:100%;
+	left:2%;
+	z-index:20;
+	top:45%;
+	text-align: center;
+}
+
+.chara_voice ul {
+	width:100%;
+	display: inline-block;
+}
+
+.chara_voice ul li {
+	float:left;
+	width:10%;
+	border:2px solid #fff;
+	background:#fff;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-right:1%;
+	box-shadow:2px 2px 2px rgba(102,90,90,0.2);
+}
+
+.chara_voice ul li a img {
+	width:100%;
+	transition: all 0.3s;
+}
+
+.chara_voice ul li a:hover img {
+	opacity: 0.6;
+}
+
+.chara_txt {
+	width:100%;
+	padding-top:56.3%;
+	text-indent: -9999px;
+	overflow: hidden;
+	position:absolute;
+	left:0;
+	z-index:20;
+	top:72.5%;
+}
+
+.chara_spec {
+	width:100%;
+	padding-top:6%;
+	text-indent: -9999px;
+	overflow: hidden;
+	position:absolute;
+	left:0;
+	z-index:20;
+	top:98%;
+}
+
+.chara_stand {
+	width:100%;
+	position:relative;
+	z-index:5;
+}
+
+.chara_stand ul li {
+	width:100%;
+	padding-top:148%;
+	display: block;
+}
+
+.chara_costume {
+	width:100%;
+	position:absolute;
+	left:0;
+	top:51%;
+	z-index:20;
+}
+
+.chara_costume ul {
+	display:inline-block;
+	margin-left:2%;
+	width:98%;
+}
+
+.chara_costume ul li {
+	width:31%;
+	float:left;
+	background:#fff;
+	overflow: hidden;
+	margin:0 2% 0 0;
+	box-shadow:2px 2px 2px rgba(102,90,90,0.2);
+}
+
+.chara_costume ul li a img {
+	width:100%;
+	transition: all 0.3s;
+}
+
+.chara_costume ul li a:hover img {
+	opacity: 0.6;
+}
+
+#Chara01 .chara_sq {background:url("chara01_sq.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara01_sq.jpg*/ left top no-repeat;background-size:cover;}
+#Chara01 .chara_catch {background:url("chara01_catch.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara01_catch.png*/ left top no-repeat;background-size:100%;}
+#Chara01 .chara_phrase {background:url("chara01_phrase.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara01_phrase.png*/ left top no-repeat;background-size:100%;}
+#Chara01 .chara_name {background:url("chara01_name.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara01_name.png*/ left top no-repeat;background-size:100%;}
+#Chara01 .chara_txt {background:url("chara01_txt.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara01_txt.png*/ left top no-repeat;background-size:100%;}
+#Chara01 .chara_spec {background:url("chara01_spec.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara01_spec.png*/ left top no-repeat;background-size:100%;}
+.stand01_a {background:url("stand_chara01_a.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara01_a.png*/ left top no-repeat;background-size:200%;}
+.stand01_b {background:url("stand_chara01_b.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara01_b.png*/ left top no-repeat;background-size:200%;}
+.stand01_c {background:url("stand_chara01_c.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara01_c.png*/ left top no-repeat;background-size:200%;}
+
+#Chara02 .chara_sq {background:url("chara02_sq.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara02_sq.jpg*/ left top no-repeat;background-size:cover;}
+#Chara02 .chara_catch {background:url("chara02_catch.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara02_catch.png*/ left top no-repeat;background-size:100%;}
+#Chara02 .chara_phrase {background:url("chara02_phrase.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara02_phrase.png*/ left top no-repeat;background-size:100%;}
+#Chara02 .chara_name {background:url("chara02_name.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara02_name.png*/ left top no-repeat;background-size:100%;}
+#Chara02 .chara_txt {background:url("chara02_txt.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara02_txt.png*/ left top no-repeat;background-size:100%;}
+#Chara02 .chara_spec {background:url("chara02_spec.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara02_spec.png*/ left top no-repeat;background-size:100%;}
+.stand02_a {background:url("stand_chara02_a.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara02_a.png*/ left top no-repeat;background-size:200%;}
+.stand02_b {background:url("stand_chara02_b.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara02_b.png*/ left top no-repeat;background-size:200%;}
+
+#Chara03 .chara_sq {background:url("chara03_sq.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara03_sq.jpg*/ left top no-repeat;background-size:cover;}
+#Chara03 .chara_catch {background:url("chara03_catch.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara03_catch.png*/ left top no-repeat;background-size:100%;}
+#Chara03 .chara_phrase {background:url("chara03_phrase.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara03_phrase.png*/ left top no-repeat;background-size:100%;}
+#Chara03 .chara_name {background:url("chara03_name.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara03_name.png*/ left top no-repeat;background-size:100%;}
+#Chara03 .chara_txt {background:url("chara03_txt.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara03_txt.png*/ left top no-repeat;background-size:100%;}
+#Chara03 .chara_spec {background:url("chara03_spec.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara03_spec.png*/ left top no-repeat;background-size:100%;}
+.stand03_a {background:url("stand_chara03_a.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara03_a.png*/ left top no-repeat;background-size:200%;}
+
+#Chara04 .chara_sq {background:url("chara04_sq.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara04_sq.jpg*/ left top no-repeat;background-size:cover;}
+#Chara04 .chara_catch {background:url("chara04_catch.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara04_catch.png*/ left top no-repeat;background-size:100%;}
+#Chara04 .chara_phrase {background:url("chara04_phrase.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara04_phrase.png*/ left top no-repeat;background-size:100%;}
+#Chara04 .chara_name {background:url("chara04_name.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara04_name.png*/ left top no-repeat;background-size:100%;}
+#Chara04 .chara_txt {background:url("chara04_txt.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara04_txt.png*/ left top no-repeat;background-size:100%;}
+#Chara04 .chara_spec {background:url("chara04_spec.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/chara04_spec.png*/ left top no-repeat;background-size:100%;}
+.stand04_a {background:url("stand_chara04_a.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara04_a.png*/ left top no-repeat;background-size:200%;}
+.stand04_b {background:url("stand_chara04_b.png")/*tpa=http://www.miragesoft.jp/product/koiflag/img/character/stand_chara04_b.png*/ left top no-repeat;background-size:200%;}
+
+/* グラフィックCSS */
+
+#Gallery_wrap {
+	width:96%;
+	margin:0 auto;
+}
+
+#Gallery_wrap ul {
+	display: block;
+}
+
+#Gallery_wrap ul li {
+	display: block;
+	width:46%;
+	padding:2%;
+	float:left;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+#Gallery_wrap ul li a {
+	width:100%;
+	display: block;
+	border:solid 2px #fff;
+	border-radius: 7px;
+	overflow: hidden;
+	transition:all 0.3;
+	position: relative;
+}
+
+#Gallery_wrap ul li a img {
+	width: 100%;
+}
+
+#Gallery_wrap ul li a figcaption {
+	width:302px;
+	height:180px;
+	display: block;
+	box-shadow:0 0 0 rgba(255,255,255,1) inset;
+	position: absolute;
+	left:0;
+	top:0;
+	transition: all 0.3s;
+}
+
+#Gallery_wrap ul li a:hover figcaption {
+	box-shadow:0 0 20px rgba(255,255,255,1) inset;
+}
+
+/* スペックCSS */
+
+.spec_visual {
+	width:96%;
+	padding:4px;
+	background-color:rgba(255,255,255,0.9);
+	margin:0 auto 36px;
+	box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+.spec_visual img {
+	width:100%;
+}
+
+.spec_table {
+	text-align: center;
+}
+
+.stable1 table {
+	display: inline-block;
+	border-collapse: separate;
+	border-spacing: 12px;
+}
+
+.stable1 table tr th {
+	font-size:1.4rem;
+	line-height: 24px;
+	text-align: center;
+	background-color:#986049;
+	color:#fff;
+	border-radius: 3px;
+	padding:0 12px;
+}
+
+.stable1 table tr td {
+	font-size:1.8rem;
+	line-height: 24px;
+	text-align: left;
+	padding-left:12px;
+	color:#6A351F;
+	font-weight: bold;
+}
+
+.stable2 table {
+	display: inline-block;
+	border-collapse: separate;
+	border-spacing: 5px;
+	background-color:#F4F4F4;
+	width:96%;
+}
+
+.stable2 table tr th {
+	font-size:1.4rem;
+	line-height: 24px;
+	text-align: center;
+	background-color:#986049;
+	color:#fff;
+	border-radius: 5px;
+	padding:0 24px;
+	width:80px;
+}
+
+.stable2 table tr td {
+	font-size:1.8rem;
+	line-height: 24px;
+	text-align: center;
+	color:#6A351F;
+	background-color:#fff;
+	width:415px;
+	padding:8px 0;
+	border-radius: 5px;
+}
+
+.stable2 table tr td.yellow {
+	background-color:lightyellow;
+}
+
+.stable2 table tr td.green {
+	background-color:rgba(203,239,203,1.00);
+}
+ 
+/* ダウンロードCSS */
+
+.download_txt {
+	font-size:1.6rem;
+	color:dimgray;
+	line-height: 1.6;
+	margin:0 auto 36px;
+	width:96%;
+}
+
+.download_txt a {
+	color:#e76f90;
+	text-decoration: none;
+}
+
+.download_txt a:hover {
+	text-decoration: underline;
+}
+
+.download_image {
+	width:96%;
+	padding:4px;
+	background-color:rgba(255,255,255,0.9);
+	margin:0 auto 36px;
+	box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+.download_image img {
+	width:100%;
+}
+
+.youtube_wrap {
+	width:96%;
+	padding:4px;
+	background-color:rgba(255,255,255,0.9);
+	margin:0 auto 36px;
+	box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+.youtube {
+    position: relative;
+	width:100%;
+    padding-bottom: 56.5%;
+    padding-top: 30px;
+    height: 0;
+}
+
+.youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.download_table {
+	width:100%;
+	text-align: center;
+	margin:0 auto 64px;
+}
+
+.download_table table {
+	display: inline-block;
+	border-collapse: separate;
+	border-spacing: 5px;
+	background-color:#F4F4F4;
+	width:96%;
+}
+
+.download_table table tr th {
+	font-size:1.8rem;
+	line-height: 24px;
+	text-align: left;
+	background-color:#fff;
+	color:#6A351F;
+	border-radius: 5px;
+	padding:0 24px;
+	width:400px;
+}
+
+.download_table table tr td {
+	font-size:1.8rem;
+	line-height: 24px;
+	text-align: center;
+	color:#6A351F;
+	background-color:#fff;
+	width:261px;
+	padding:8px 0;
+	border-radius: 5px;
+}
+
+.download_table table a {
+	color:#e76f90;
+	text-decoration: none;
+}
+
+.download_table table a:hover {
+	text-decoration: underline;
+}
+
+a.download_button {
+	width:200px;
+	height:24px;
+	background-color:#e76f90;
+	display: block;
+	margin:0 auto;
+	color:#fff!important ;
+	text-decoration: none;
+	border-radius: 12px;
+	overflow: hidden;
+	transition:all 0.3s;
+}
+
+a:hover.download_button {
+	background:#a7d050;
+	text-decoration: none!important;
+}
+
+.thead {
+	background-color:#9c5e4e!important;
+	color:#fff!important;
+}
+
+/* キャンペーンCSS */
+
+.early_body {
+	background:url("early_body.png")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/early_body.png*/ center top no-repeat;
+	width:100%;
+	background-size:150%;
+	padding-top:80%;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+.preorder_body {
+	background:url("preorder_body.png")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/preorder_body.png*/ center top no-repeat;
+	width:100%;
+	background-size:150%;
+	padding-top:80%;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+.banner_body {
+	background:url("banner_body.png")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/banner_body.png*/ center top no-repeat;
+	width:100%;
+	background-size:150%;
+	padding-top:80%;
+	position: relative;
+}
+
+.sppreorder_body {
+	background:url("sp_yoyaku.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/sp_yoyaku.jpg*/ center top no-repeat;
+	width:100%;
+	height:300px;
+	background-size:100%;
+	padding-top:80%;
+	overflow: hidden;
+
+	text-indent: -9999px;
+
+}
+
+.banner_body a {
+	width:80%;
+	height:32px;
+	line-height: 32px;
+	color:#fff;
+	border-radius: 10px;
+	font-size:1.4rem;
+	display: block;
+	position:absolute;
+	bottom:2%;
+	left:10%;
+	background-color:#eb6e8f;
+	text-decoration: none;
+	font-weight: bold;
+	transition: all 0.3s;
+}
+
+.banner_body a:hover {
+	background-color:#FFB7CA;
+}
+
+.shopbox {
+	width:96%;
+	padding-top:74%;
+	box-shadow:0 0 5px rgba(152,96,73,0.5);
+	margin:0 auto 48px;
+	position:relative;
+}
+
+.s_sofmap {background:url("sofmap.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/shopbonus/sofmap.jpg*/ left top no-repeat;background-size:100%;}
+.s_getchu {background:url("getchu.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/shopbonus/getchu.jpg*/ left top no-repeat;background-size:100%;}
+.s_melonbooks {background:url("melonbooks.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/shopbonus/melonbooks.jpg*/ left top no-repeat;background-size:100%;}
+.s_trader {background:url("trader.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/shopbonus/trader.jpg*/ left top no-repeat;background-size:100%;}
+.s_toranoana {background:url("toranoana.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/shopbonus/toranoana.jpg*/ left top no-repeat;background-size:100%;}
+.s_fammys {background:url("fammys.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/shopbonus/fammys.jpg*/ left top no-repeat;background-size:100%;}
+.s_amazon {background:url("amazon.jpg")/*tpa=http://www.miragesoft.jp/product/koiflag/campaign/shopbonus/amazon.jpg*/ left top no-repeat;background-size:100%;}
+
+.shoplink {
+	width:100%;
+	height:40px;
+	position: absolute;
+	bottom:0;
+	left:0;
+	background-color:#fff;
+}
+
+.shoplink a {
+	width:50%;
+	height:40px;
+	line-height: 40px;
+	text-decoration: none;
+	color:#fff;
+	transition: all 0.3s;
+	display: inline-block;
+	float:left;
+	font-size:1.8rem;
+}
+
+.shoplink a:hover {
+	opacity: 0.7;
+}
+
+.s_sofmap .s_shop {background-color:#00b7ee;}
+.s_getchu .s_shop {background-color:#ff0080;}
+.s_melonbooks .s_shop {background-color:#32b16c;}
+.s_trader .s_shop {background-color:#0011cf;}
+.s_toranoana .s_shop {background-color:#ff8327;}
+.s_fammys .s_shop {background-color:#e60012;}
+.s_amazon .s_shop {background-color:#ffaa11;}
+
+.s_ready {background-color:#7B7B7B;}
+
+.s_go {background-color:#F9F;}
+
+.banner_title {
+	font-size:3.5em;
+	color:#966048;
+	width:94%;
+	height:50px;
+	line-height:50px;
+	margin:0 auto 36px;
+	border-bottom:1px solid #966048;
+	font-family: 'Sigmar One', cursive;
+	text-align:center;
+}
+
+.urlbox {
+	border:0;
+	background-color:#ffffff;
+	font-size:80%;
+	font-family: "Meiryo","MS P Gothic","Osaka",Verdana,Arial, Helvetica, sans-serif;
+	color:#460c08;
+}
+
+.banner_wrap_header {
+	width:80%;
+	margin:0 auto 36px;
+}
+
+.banbox_header {
+	width:100%;
+	padding:10px;
+	font-size:1.4em;
+	color:#f8c100;
+}
+
+.banbox_header a img {
+	width:100%;
+}
+
+.banner_wrap_icon {
+	width:96%;
+	margin:0 auto 36px;
+}
+
+.banbox_icon {
+	width:44%;
+	padding:3%;
+	float:left;
+	font-size:1.4em;
+	color:#f8c100;
+}
+
+.banbox_icon a img {
+	width:100%;
+	height:auto;
+}
+
+.banner_wrap250 {
+	width:96%;
+	margin:0 auto 36px;
+}
+
+.banbox_250 {
+	width:44%;
+	padding:3%;
+	float:left;
+	font-size:1.4em;
+	color:#f8c100;
+}
+
+.banbox_250 img {
+	width:100%;
+	height:auto;
+}
+
+.banbox_250 textarea {
+	width:100%;
+	height:80px;
+	margin-top:8px;
+}
+
+.banner_wrap200 {
+	width:96%;
+	margin:0 auto 36px;
+}
+
+.banbox_200 {
+	width:44%;
+	padding:3%;
+	float:left;
+	font-size:1.4em;
+	color:#f8c100;
+}
+
+.banbox_200 img {
+	width:100%;
+	height:auto;
+}
+
+.banbox_200 textarea {
+	width:100%;
+	height:40px;
+	margin-top:8px;
+}
+
+.banner_wrap600 {
+	width:96%;
+	margin:0 auto 36px;
+}
+
+.banbox_600 {
+	width:94%;
+	padding:3%;
+	font-size:1.4em;
+	text-align:center;
+	color:#f8c100;
+}
+
+.banbox_600 img {
+	width:100%;
+	height:auto;
+}
+
+.banbox_600 textarea {
+	width:100%;
+	height:60px;
+	margin-top:8px;
+}
+
+.banner_wrap150 {
+	width:96%;
+	margin:0 auto 36px;
+}
+
+.banbox_150 {
+	width:44%;
+	padding:3%;
+	float:left;
+	font-size:1.4em;
+	text-align:center;
+	color:#f8c100;
+}
+
+.banbox_150 img {
+	width:100%;
+	height:auto;
+}
+
+.banbox_150 textarea {
+	width:100%;
+	height:100px;
+	margin-top:8px;
+}
+
+
+
+
+.pop_box {
+	width:94%;
+	padding:2%;
+	margin:0 auto 24px;
+	border-radius: 10px;
+	background-color:#fff;
+	overflow: hidden;
+}
+
+.pop_box img {
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.event_img {
+	width:100%;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top:10px;
+}
+
+.event_img img {
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.freetext {
+	width:94%;
+	padding:2%;
+	margin:0 auto 24px;
+	border-radius: 10px;
+	overflow: hidden;
+	font-size:1.6rem;
+	line-height: 1.5;
+	text-align: left;
+	background-color:#fff;
+	color:dimgray;
+}
+
+.freetext p {
+	width:94%;
+	margin:12px auto;
+}
+
+.freetext p a {
+	color:dodgerblue;
+	text-decoration: none;
+}
+
+.freetext p a:hover {
+	color:dodgerblue;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topics_box {
+	width:90%;
+	margin:0 5%;
+	background-color:#f6f6f6;
+	border-radius: 5px;
+	position: relative;
+	box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+.topics_box a {
+	text-decoration: none;
+}
+
+a .topics_img {
+	width:100%;
+	overflow: hidden;
+	border-radius: 5px 5px 0 0;
+	position: relative;
+	z-index:1;
+	background-color:#fff;
+}
+
+a .topics_img img {
+	width:100%;
+	transition: all 0.3s;
+}
+
+a:hover .topics_img img {
+	transform:scale(1.2);
+}
+
+a .topics_day {
+	width:40%;
+	height:24px;
+	line-height: 24px;
+	color:#fff;
+	font-family: 'Sigmar One', cursive;
+	font-size:3vw;
+	background-color:#fdd503;
+	position:absolute;
+	left:12px;
+	top:-12px;
+	display: block;
+	z-index:20;
+}
+
+a .topics_tag {
+	height:24px;
+	color:#fff;
+	line-height: 24px;
+	font-size:2.6vw;
+	text-align: center;
+}
+
+a .topics_tag p.mirage {background-color:#5d90cc;}
+a .topics_tag p.koiflag {background-color:#a9cf52;}
+a .topics_tag p.event {background-color:#F39E00;}
+a .topics_tag p.ready {background-color:#909090;}
+
+a .topics_txt {
+	width:90%;
+	padding:5%;
+}
+
+a .topics_txt p {
+	color:#5d90cc;
+	font-size:2.6vw;
+	text-decoration: none;
+	text-align: left;
+}
+
+#Information {
+	width:100%;
+	padding:54px 0;
+	background:url(../img/information_bg.png) left top repeat;
+}
+
+.info_area {
+	width:100%;
+	margin:0 auto;
+	position:relative;
+}
+
+br.mn {
+	display: none;
+}
+
+#Information h3 {
+	font-family: 'Dosis', sans-serif;
+	font-size:5vw;
+	color:#ffffff;
+	text-align: left;
+	display: block;
+	height:36px;
+	line-height: 36px;
+	margin-bottom:36px;
+	position:relative;
+	padding-left:1%;
+}
+
+#Information h3:after {
+	content: "";
+	display: block;
+	width:75%;
+	height:1px;
+	position: absolute;
+	right:0;
+	bottom:4px;
+	background-color:#ffffff;
+}
+
+#Information h3 span {
+	font-size:1.4rem;
+	position: absolute;
+	right:10px;
+}
+.infolog_area {
+	width:100%;
+}
+
+.infolog_area dl {
+	width:100%;
+	line-height: 24px;
+	margin-bottom:12px;
+	padding-bottom:12px;
+	clear:both;
+	border-bottom:1px dashed #fff;
+}
+
+.infolog_area dl dt {
+	width:20%;
+	margin-left:2.5%;
+	margin-right:2.5%;
+	height:24px;
+	float:left;
+	background-color:white;
+	border-radius: 5px;
+	text-align: center;
+	color:#6196d4;
+	font-size:2vw;
+	font-weight: bold;
+}
+
+.infolog_area dl dd {
+	width:72.5%;
+	line-height: 24px;
+	float:left;
+	font-size:1.6rem;
+	text-align: left;
+	color:#fff;
+}
+
+.backlog_link {
+	width:50%;
+	height:24px;
+	position:absolute;
+	bottom:-46px;
+	right:2.5%;
+}
+
+.backlog_link a {
+	color:#fff;
+	width:100%;
+	height:22px;
+	line-height: 22px;
+	border:1px solid #fff;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size:2.6vw;
+	transition: all 0.3s;
+}
+
+.backlog_link a:hover {
+	background-color:#fff;
+	color:#5d90cc;
+}
+
+#Others {
+	width:100%;
+	padding:54px 0;
+	background-color:#e6ecf0;
+}
+
+.wrap1k {
+	width:100%;
+	margin:0 auto;
+}
+
+.twidget {
+	width:88%;
+	height:352px;
+	padding:4%;
+	background-color:#fff;
+	border-radius: 5px;
+	margin:0 auto 16px;
+	position:relative;
+}
+
+.twidget h4 {
+	font-family: 'Dosis', sans-serif;
+	font-size:3.6rem;
+	color:#1da1f2;
+	text-align: left;
+	position:relative;
+	line-height: 30px;
+	padding-left:24px;
+	margin-bottom:24px;
+}
+
+.twidget h4:before {
+	content: "";
+	display: block;
+	height:30px;
+	width:10px;
+	background-color:#1da1f2;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	margin:auto 0;
+}
+
+a.twitter_link {
+	width:50%;
+	height:24px;
+	border-radius: 3px;
+	border:1px solid #1da1f2;
+	display: block;
+	position:absolute;
+	right:2%;
+	top:6%;
+	color:#1da1f2;
+	font-size:2.6vw;
+	line-height: 24px;
+	text-decoration: none;
+	text-align: center;
+	transition: all 0.3s;
+}
+
+a:hover.twitter_link {
+	background-color:#1da1f2;
+	color:#ffffff;
+}
+
+.twidget_wrap {
+	width:100%;
+	height:298px;
+	border-left:1px solid #e6ecf0;
+	border-right:1px solid #e6ecf0;
+}
+
+.index_contents {
+	width:88%;
+	height:352px;
+	padding:4%;
+	background-color:#fff;
+	border-radius: 5px;
+	position:relative;
+	margin:0 auto 16px;
+}
+
+.index_contents h4 {
+	font-family: 'Dosis', sans-serif;
+	font-size:3.6rem;
+	color:#a9cf52;
+	text-align: left;
+	position:relative;
+	line-height: 30px;
+	padding-left:24px;
+	margin-bottom:24px;
+}
+
+.index_contents h4:before {
+	content: "";
+	display: block;
+	height:30px;
+	width:10px;
+	background-color:#a9cf52;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	margin:auto 0;
+}
+
+.index_contents_wrap {
+	width:100%;
+	height:298px;
+	overflow-y: scroll;
+}
+
+.index_contents_wrap ul li {
+	margin-bottom:16px;
+	width:96%;
+}
+
+.index_contents_wrap ul li a img {
+	width:100%;
+	transition:all 0.3s;
+}
+
+.index_contents_wrap ul li a:hover img {
+	opacity: 0.7;
+}
+
+.foot_space {
+	width:100%;
+	height:200px;
+}
+
+
+.copyright {
+	font-family: 'Dosis', sans-serif;
+	color:#fff;
+}
+
+/* ブランドサブページ */
+
+.subpage_wrap {
+	width:100%;
+	padding-top:7vh;
+	background-color:#e6ecf0;
+	min-height: 70vh;
+}
+
+.bg_white {
+	width:100%;
+	background-color:#fff;
+	padding-top:40px;
+}
+
+.bg_bluegray {
+	width:100%;
+
+	padding-bottom:1px;
+}
+
+.category_head {
+	width:100%;
+	padding:36px 0;
+	background:url(../img/subhead_bg.jpg) center center no-repeat;
+	background-size:cover;
+	box-shadow:0 -5px 5px rgba(0,0,0,0.2) inset;
+}
+
+.category_head h3 {
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding: 5px 20px;
+  position: relative;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  color: #ffffff;
+  font-weight: bold;
+	font-family: 'Sigmar One', cursive;
+	font-size:3rem;
+	line-height: 12px;
+	text-shadow:0 3px 5px rgba(0,0,0,0.2);
+}
+
+.category_head h3 span {
+	font-size:1.4rem;
+}
+
+.category_head h3:before {
+  content: "";
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  display: block;
+  position: absolute;
+  width: calc(100% - 20px);
+  height: 76px;
+  top: -8px;
+  left: 8px;
+}
+
+.titlebox {
+	background-color:#fff;
+	border-radius: 10px;
+	padding:2%;
+	width:94%;
+	margin:0 auto;
+	text-align: left;
+}
+
+.titlebox h4 {
+	width:98%;
+	margin:0 auto;
+	font-weight: bold;
+	font-size:1.6rem;
+	color:#fff;
+	line-height: 32px;
+	border-radius: 5px;
+	text-align: left;
+	padding-left:2%;
+	background: -webkit-repeating-linear-gradient(-45deg, #6d9cd4, #6d9cd4 3px,#5d90cc 3px, #5d90cc 7px);
+	background: repeating-linear-gradient(-45deg, #6d9cd4, #6d9cd4 3px,#5d90cc 3px, #5d90cc 7px);
+}
+
+.titlebox h5 {
+	font-size:1.6rem;
+	line-height: 1.5;
+	padding:0 24px;
+	background-color:saddlebrown;
+	color:#fff;
+	border-radius: 12px;
+	text-align: left;
+	margin:24px 0 0 2%;
+	display: inline-block;
+}
+
+.titlebox p {
+	font-size:1.6rem;
+	line-height: 1.5;
+	text-align: left;
+	margin:24px auto;
+	width:96%;
+	display: block;
+	color:dimgray;
+}
+
+.titlebox p.normal a {
+	color:dodgerblue;
+	text-decoration: none;
+}
+
+.titlebox p.normal a:hover {
+	color:dodgerblue;
+	text-decoration: underline;
+}
+
+.titlebox hr {
+	width:96%;
+	margin:0 auto;
+}
+
+.pop_box {
+	background-color:#fff;
+	border-radius: 10px;
+	padding:2%;
+	width:94%;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+.pop_box img {
+	width:100%;
+	height:auto;
+}
+
+.event_img {
+	width:100%;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top:2%;
+}
+
+.event_img img {
+	width:100%;
+	height:auto;
+}
+
+.titlebox table {
+	width:96%;
+	margin:24px auto;
+	font-size:1.6rem;
+	line-height: 1.6;
+	color:dimgray;
+	text-align: left;
+	box-shadow:0 0 5px rgba(0,0,0,0.1);
+	border-collapse: separate;
+	border-spacing: 5px;
+}
+
+.titlebox table th {
+	background-color:rgba(93,144,204,1.00);
+	color:#fff;
+	padding:2%;
+	width:26%;
+	position:relative;
+}
+
+.titlebox table th:after {
+	left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: rgba(93,144,204,1.00);
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+.titlebox table td {
+	background-color:#ffffff;
+	padding:2%;
+}
+
+.titlebox table td ul {
+	padding-left:24px;
+}
+
+.titlebox table td ul li {
+	list-style-type: square;
+	margin-bottom:8px;
+}
+
+.title_banner {
+	margin:36px auto;
+	width:100%;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.title_banner a img {
+	width:100%;
+	opacity: 1;
+	transition: all 0.3s;
+}
+
+.title_banner a:hover img {
+	opacity: 0.7;
+}
+
+#Past_records {
+	width:100%;
+	padding:54px 0;
+	background:url(../img/information_bg.png) left top repeat;
+}
+
+#Past_records h3 {
+	font-family: 'Dosis', sans-serif;
+	font-size:5vw;
+	color:#ffffff;
+	text-align: left;
+	display: block;
+	height:36px;
+	line-height: 36px;
+	margin-bottom:36px;
+	position:relative;
+	padding-left:1%;
+}
+
+#Past_records h3:after {
+	content: "";
+	display: block;
+	width:70%;
+	height:1px;
+	position: absolute;
+	right:0;
+	bottom:4px;
+	background-color:#ffffff;
+}
+
+#Past_records h3 span {
+	font-size:1.4rem;
+	position: absolute;
+	right:10px;
+}
+
+.pastrecords_area dl {
+	width:100%;
+	line-height: 24px;
+	margin-bottom:12px;
+	padding-bottom:12px;
+	clear:both;
+	border-bottom:1px dashed #fff;
+}
+
+.pastrecords_area dl dt {
+	width:20%;
+	margin-left:2.5%;
+	margin-right:2.5%;
+	height:24px;
+	float:left;
+	background-color:white;
+	border-radius: 5px;
+	text-align: center;
+	color:#6196d4;
+	font-size:2vw;
+	font-weight: bold;
+}
+
+.pastrecords_area dl dd {
+	width:72.5%;
+	line-height: 24px;
+	float:left;
+	font-size:1.6rem;
+	text-align: left;
+	color:#fff;
+}
+
+.contact_banner {
+	margin:36px auto;
+	width:100%;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.contact_banner a img {
+	width:100%;
+	opacity: 1;
+	transition: all 0.3s;
+}
+
+.contact_banner a:hover img {
+	opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+.buttonWrap{width:170px; height:80px; display:block;}
+
+a{text-decoration:none;}
+
+.toggleButton{
+display:block;
+width:170px;
+height:30px;
+padding: 12px 0px 12px 0px;
+text-size:24px;
+            margin: 5px 0px 5px 10px;
+font-family:arial, sans-serif;
+font-weight:bold;
+text-align:center;
+color:#FFF;
+text-decoration:none;
+border-radius:7px; -moz-border-radius:7px;
+cursor:pointer;
+border:1px solid #05ABE0;
+text-shadow:-1px -1px 0px #05ABE0;
+background: #87E0FD;
+background: -moz-linear-gradient(top, #87E0FD 0%, #53CBF1 40%, #05ABE0 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87E0FD), color-stop(40%,#53CBF1), color-stop(100%,#05ABE0));
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87E0FD', endColorstr='#05ABE0',GradientType=0 );
+
+}
+.toggleButton:active{		
+background: #87e0fd;
+background: -moz-linear-gradient(top, #05ABE0 0%, #53CBF1 40%, #87E0FD 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#05ABE0), color-stop(40%,#53CBF1), color-stop(100%,#87E0FD));
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05ABE0', endColorstr='#87E0FD',GradientType=0 );
+}
+#Mainvisual_ {
+	width:50%;
+	height:400px;
+	position: relative;
+}
