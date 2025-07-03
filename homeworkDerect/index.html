@@ -1,0 +1,642 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025届高考尖子生清北班学长亲授</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --dark-blue: #2c3e50;
+            --light-blue: #ecf0f1;
+            --white: #ffffff;
+            --gray: #95a5a6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark-blue);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 首屏标语 */
+        .hero {
+            background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* 应届生优势 */
+        .advantages {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .advantage-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            background-color: var(--light-blue);
+            transition: transform 0.3s;
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .advantage-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        .advantage-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* 独家知识体系 */
+        .knowledge-system {
+            padding: 60px 0;
+            background-color: var(--light-blue);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-blue);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        /* 服务矩阵 */
+        .services {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .service-header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .service-body {
+            padding: 20px;
+        }
+        
+        .service-feature {
+            margin-bottom: 15px;
+        }
+        
+        .service-feature h4 {
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+        }
+        
+        /* 科目展示 */
+        .subjects {
+            padding: 60px 0;
+            background-color: var(--light-blue);
+        }
+        
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .subject-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .subject-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .math-icon {
+            color: #e74c3c;
+        }
+        
+        .science-icon {
+            color: #2ecc71;
+        }
+        
+        .language-icon {
+            color: #f39c12;
+        }
+        
+        .subject-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* 信任背书 */
+        .trust {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .trust-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .trust-item {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--light-blue);
+        }
+        
+        .trust-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        /* 行动号召 */
+        .cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 2px solid white;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .qr-code {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+        }
+        
+        .counter {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .tuition-label {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* 悬浮按钮 */
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(52, 152, 219, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 首屏标语 -->
+    <section class="hero">
+        <div class="container">
+            <h1>2025届高考尖子生学长亲授：用最新经验点燃高中进阶之路！</h1>
+            <p>应届毕业生独家教学 | 高考动向零时差 | 免费学情诊断</p>
+        </div>
+    </section>
+    
+    <!-- 应届生优势 -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">应届生独特优势</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>高考动向零时差</h3>
+                    <p>2025年最新题型趋势/评分规则亲历解读，掌握第一手高考资讯</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>高效避坑指南</h3>
+                    <p>学科易错点+命题陷阱拆解，避免无谓失分，精准提升成绩</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>实战方法论</h3>
+                    <p>刚验证过的学习体系拒绝低效重复，直击高考核心要点</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 独家知识体系 -->
+    <section class="knowledge-system">
+        <div class="container">
+            <h2 class="section-title">独家知识体系</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>考点定位</h3>
+                        <p>高考核心考点图谱，精准把握命题方向，避免无效学习</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>方法建模</h3>
+                        <p>跨学科解题模型库，建立标准化解题流程，提升解题速度</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>陷阱破解</h3>
+                        <p>高频易错题突破模板，识别命题陷阱，减少非智力因素失分</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>思维升级</h3>
+                        <p>学科思维导图体系，构建知识网络，提升综合运用能力</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 服务矩阵 -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">精准教学服务矩阵</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">初升高预科班</div>
+                    <div class="service-body">
+                        <div class="service-feature">
+                            <h4>免费福利</h4>
+                            <p>高考改革解读+3年规划书</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>核心内容</h4>
+                            <p>高中思维转型+核心前置知识</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">高一升高二</div>
+                    <div class="service-body">
+                        <div class="service-feature">
+                            <h4>免费福利</h4>
+                            <p>学科薄弱点诊断报告</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>核心内容</h4>
+                            <p>选科决策+难点提前破解</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">高二升高三</div>
+                    <div class="service-body">
+                        <div class="service-feature">
+                            <h4>免费福利</h4>
+                            <p>全科分数提升路径图</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>核心内容</h4>
+                            <p>专题速攻+命题逻辑训练</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 科目展示 -->
+    <section class="subjects">
+        <div class="container">
+            <h2 class="section-title">核心科目专项突破</h2>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="subject-icon math-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>数学/物理</h3>
+                    <p>模板框架逐一攻克，建立标准化解题流程，提升解题速度与准确率</p>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon science-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>化生</h3>
+                    <p>实验逻辑突破班（真题实验设计），掌握实验设计思路与数据分析方法</p>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-icon language-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>语英</h3>
+                    <p>主观题抢分集训（作文模板/阅读速解），提升语言表达与理解能力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 信任背书 -->
+    <section class="trust">
+        <div class="container">
+            <h2 class="section-title">品质承诺</h2>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>首试听不满意全额退款</h3>
+                    <p>我们对自己的教学质量充满信心</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>最新模拟题资源库</h3>
+                    <p>拥有2025年最新模拟题及解析</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 行动号召 -->
+    <section class="cta">
+        <div class="container">
+            <h2>立即预约免费学情诊断！</h2>
+            <p>名额有限，抓住与清北学长一对一交流的机会，定制专属学习方案</p>
+            <a href="#contact" class="cta-button">立即预约</a>
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> 13031918517（微信同号）</p>
+            </div>
+            
+            <div class="counter">
+                <i class="fas fa-clock"></i> 仅剩 <span id="counter">14</span> 个名额
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>©2025 清北学长家教服务 | 个性化方法指导非学科培训</p>
+        </div>
+    </footer>
+    
+    <!-- 悬浮按钮 -->
+    
+    
+    <script>
+        // 简单计数器效果
+        let count = 15;
+        const counterElement = document.getElementById('counter');
+        
+        function updateCounter() {
+            if (count > 0) {
+                count--;
+                counterElement.textContent = count;
+                setTimeout(updateCounter, Math.random() * 30000 + 30000); // 30-60秒随机减少
+            }
+        }
+        
+        // 启动计数器
+        setTimeout(updateCounter, 10000);
+    </script>
+
+</body></html>
